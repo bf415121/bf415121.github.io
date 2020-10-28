@@ -58,49 +58,7 @@
 	<div class="container-fluid">
 		<h1>搜索结果<a href="/?id=49"><button type="button" class="btn btn-primary" style="margin-left:10px;">返回重新搜索</button></a></h1>
 				<div class="row" style="text-align:center;font-size: 25px;">没有搜索到该组合，请减少角色重新搜索</div>
-			</div>
-	<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
-	<script src="bf41512.github.io/jquery.min.js"></script>
-	<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
-	<script src="bf41512.github.io/bootstrap.min.js"></script>
-<script>
-function copyToClipboard (text) {
-    if(text.indexOf('-') !== -1) {
-        let arr = text.split('-');
-        text = arr[0] + arr[1];
-    }
-    var textArea = document.createElement("textarea");
-      textArea.style.position = 'fixed';
-      textArea.style.top = '0';
-      textArea.style.left = '0';
-      textArea.style.width = '2em';
-      textArea.style.height = '2em';
-      textArea.style.padding = '0';
-      textArea.style.border = 'none';
-      textArea.style.outline = 'none';
-      textArea.style.boxShadow = 'none';
-      textArea.style.background = 'transparent';
-      textArea.value = text;
-      document.body.appendChild(textArea);
-      textArea.select();
-
-      try {
-        var successful = document.execCommand('copy');
-        var msg = successful ? '成功复制到剪贴板' : '该浏览器不支持点击复制到剪贴板';
-       alert(msg);
-      } catch (err) {
-        alert('该浏览器不支持点击复制到剪贴板');
-      }
-
-      document.body.removeChild(textArea);
-}		
-</script>
-	
-</body>
-</html>
-
-
-		  <div class="col-md-12 bs_title">编号ID：HC492217783cgqu<button type="button" onclick="copyToClipboard('HC492217783cgqu')" class="btn btn-info" style="margin-left:10px;">点击复制ID</button></div>
+					  <div class="col-md-12 bs_title">编号ID：HC492217783cgqu<button type="button" onclick="copyToClipboard('HC492217783cgqu')" class="btn btn-info" style="margin-left:10px;">点击复制ID</button></div>
 		  <div class="col-md-12 bs_content">
 								
 								
@@ -206,3 +164,46 @@ function copyToClipboard (text) {
 						<!-- <img src="/public/uploads/ad/20201015/6a555e34746bb81761fc559224f02d00.png"/> -->
 							  </div>
 		</div>
+
+        </div>
+	<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+	<script src="bf41512.github.io/jquery.min.js"></script>
+	<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+	<script src="bf41512.github.io/bootstrap.min.js"></script>
+<script>
+function copyToClipboard (text) {
+    if(text.indexOf('-') !== -1) {
+        let arr = text.split('-');
+        text = arr[0] + arr[1];
+    }
+    var textArea = document.createElement("textarea");
+      textArea.style.position = 'fixed';
+      textArea.style.top = '0';
+      textArea.style.left = '0';
+      textArea.style.width = '2em';
+      textArea.style.height = '2em';
+      textArea.style.padding = '0';
+      textArea.style.border = 'none';
+      textArea.style.outline = 'none';
+      textArea.style.boxShadow = 'none';
+      textArea.style.background = 'transparent';
+      textArea.value = text;
+      document.body.appendChild(textArea);
+      textArea.select();
+
+      try {
+        var successful = document.execCommand('copy');
+        var msg = successful ? '成功复制到剪贴板' : '该浏览器不支持点击复制到剪贴板';
+       alert(msg);
+      } catch (err) {
+        alert('该浏览器不支持点击复制到剪贴板');
+      }
+
+      document.body.removeChild(textArea);
+}		
+</script>
+	
+</body>
+</html>
+
+
