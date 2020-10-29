@@ -1,231 +1,213 @@
 
-
 <!DOCTYPE html>
-<html lang="zh-CN">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <title><黑潮 深海覺醒> 台服 繁中 IOS Android</title>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>地城之主查询系统</title>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="css/examples.css">
+</head>
 
-    <!-- Bootstrap -->
-    <link href="/public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+	<link href="/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="/js/jquery.min.js"></script>
 
-    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
-    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
-    <!--[if lt IE 9]>
-      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
-    <![endif]-->
-	<style>
-		.game_box{
-			border: 1px solid lightgray;
-			padding-top:10px;
-			padding-bottom:10px;
-		}
-		.select_box{
-			width: auto;
-			padding: 0 30%;
-			margin: 0;
-		}
-		.select_box option{
-		text-align:center;
-		}
-		.img_box{
-			background-color: #97e0ff;
-			display: inline-block;
-			height: 74px;
-			font-size: 14px;
-			line-height: 74px;
-			padding: 0 12px;
-			border-radius: 16px;	
-			font-weight: 500;
-			color: rgba(0,0,0,0.6);
-			margin-bottom: 5px;
-			margin-right: 5px;
-			box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
-		}
-		.img_box img{
-			float: left;
-			margin: 0 4px 0 -12px;
-			height: 74px;
-			width: 74px;
-			border-radius: 20%;		
-		}
-	</style>
-  </head>
-  
-  
-<body style="margin: 5px;">
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="/js/bootstrap.min.js"></script>
+	<script src="/js/bootstrap-toggle.min.js"></script>
+   
 
-	<h2><黑潮 深海覺醒> 台服 繁中 IOS Android</h2>
-	<h4></h4>
 
-	<div class="container-fluid game_box">
-		<form action='/index.php/index/index/search.html' method='get' id="myform">
-			<div class="row">
-			  <div class="col-md-4">
-			  <p>搜索条件</p>
-			  </div>
-			  <div class="col-md-8">
-					<div class="col-md-4">
-						<div class="form-group" style="width:120px;">
-							<input type="text" name="account_id" class="form-control" placeholder="按ID搜索">
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="form-group" style="width:10px;">
-							<select class="form-control select_box" name="five_num">
-							  <option value="0">SSR★ 无限制</option>
-							  <option value="1">SSR *1</option>
-							  <option value="2">SSR *2</option>
-							  <option value="3">SSR *3</option>
-							  <option value="4">SSR *4</option>
-							  <option value="5">SSR *5</option>
-							  <option value="6">SSR *6</option>
-							  <option value="7">SSR *7</option>
-							  <option value="8">SSR *8</option>
-							  <option value="9">SSR *9</option>
-							  <option value="10">SSR *10</option>
-							  <option value="11">SSR *11</option>
-							  <option value="12">SSR *12</option>
-							  <option value="13">SSR *13</option>
-							  <option value="14">SSR *14</option>
-							  <option value="15">SSR *15</option>
-							</select>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="form-group">
-							<button type="submit" class="btn btn-info">搜索</button>
-							<button type="button" id="delbox" class="btn btn-info">清除</button>
-						</div>
-					</div>
-			  
-			  
-			  </div>
-			</div>
-			<input type="hidden" name="gid" value="49"/>
-			<div id="selected_img"></div>
-			
-		</form>	
+<body>
+
+
+
+
+
+
+<div id="container">
+	<h1>地城之主</h1> 
+	<p class='lead'>请先选择数据显示方式,然后选择要查询人物,点击查询，将编号告知客服（最好把人物截图一起也发给客服）</p>
+<form role="form" action="dxccx.php" method="get">	
+
+
+	<div class="radio">
+	<label>
+		<input type="radio" name="optionsRadios"  value="1" checked > 查询到的数据以图片显示
+	</label>
+</div>
+<div class="radio">
+	<label>
+		<input type="radio" name="optionsRadios" value="2">查询到的数据以文字显示
+	</label>
+</div>
+<h4>编号查询</h4>
+	
+<div class="form-group">		
+		<input type="text" class="form-control" name="nono" placeholder="填写编号">
 	</div>
 
-	
-	<div id="default_img">
-		<div class="tab-content" style="padding: 10px;">
-			<div class="tab-pane active" id="热门">
-						<div class="img_box" style="background:#FFD700">
-				<img src="/public/uploads/ad/20201016/be8ece4c09c0a8a3ced868f2d9b7011f.png" data-imgid="2581" data-imgurl="/public/uploads/ad/20201016/be8ece4c09c0a8a3ced868f2d9b7011f.png" data-rolename="企業" data-rolecolor="#FFD700">
-				企業			</div>
-			
-						<div class="img_box" style="background:#FFD700">
-				<img src="/public/uploads/ad/20201015/780f7ac1ab96e41c86e557e08d670d08.png" data-imgid="2582" data-imgurl="/public/uploads/ad/20201015/780f7ac1ab96e41c86e557e08d670d08.png" data-rolename="瑞鶴" data-rolecolor="#FFD700">
-				瑞鶴			</div>
-			
-						<div class="img_box" style="background:#FFD700">
-				<img src="/public/uploads/ad/20201015/c13742fcbd3638812d8516f755d37c9b.png" data-imgid="2592" data-imgurl="/public/uploads/ad/20201015/c13742fcbd3638812d8516f755d37c9b.png" data-rolename="翔鶴" data-rolecolor="#FFD700">
-				翔鶴			</div>
-			
-						<div class="img_box" style="background:#FFD700">
-				<img src="/public/uploads/ad/20201015/23a329a0b0157181b4de7ccffaab1e76.png" data-imgid="2585" data-imgurl="/public/uploads/ad/20201015/23a329a0b0157181b4de7ccffaab1e76.png" data-rolename="克里夫蘭" data-rolecolor="#FFD700">
-				克里夫蘭			</div>
-			
-						<div class="img_box" style="background:#FFD700">
-				<img src="/public/uploads/ad/20201015/17b1ffe7c9ede30623262649af618616.png" data-imgid="2584" data-imgurl="/public/uploads/ad/20201015/17b1ffe7c9ede30623262649af618616.png" data-rolename="獨角獸" data-rolecolor="#FFD700">
-				獨角獸			</div>
-			
-						<div class="img_box" style="background:#FFD700">
-				<img src="/public/uploads/ad/20201015/1dd8bbd772d7bef93c56a7cb5c02ed72.png" data-imgid="2583" data-imgurl="/public/uploads/ad/20201015/1dd8bbd772d7bef93c56a7cb5c02ed72.png" data-rolename="呂佐夫" data-rolecolor="#FFD700">
-				呂佐夫			</div>
-			
-						<div class="img_box" style="background:#FFD700">
-				<img src="/public/uploads/ad/20201015/c40271f0b5f916c50961246e2718b82b.png" data-imgid="2586" data-imgurl="/public/uploads/ad/20201015/c40271f0b5f916c50961246e2718b82b.png" data-rolename="弗萊徹" data-rolecolor="#FFD700">
-				弗萊徹			</div>
-			
-						<div class="img_box" style="background:#FFD700">
-				<img src="/public/uploads/ad/20201015/f8c4c29cbbb81b150c777e9809dbb837.png" data-imgid="2587" data-imgurl="/public/uploads/ad/20201015/f8c4c29cbbb81b150c777e9809dbb837.png" data-rolename="海倫娜" data-rolecolor="#FFD700">
-				海倫娜			</div>
-			
-						<div class="img_box" style="background:#FFD700">
-				<img src="/public/uploads/ad/20201015/c1d5f4e78865db2f994fac794fb40df4.png" data-imgid="2588" data-imgurl="/public/uploads/ad/20201015/c1d5f4e78865db2f994fac794fb40df4.png" data-rolename="黃泉" data-rolecolor="#FFD700">
-				黃泉			</div>
-			
-						<div class="img_box" style="background:#FFD700">
-				<img src="/public/uploads/ad/20201015/eacfb43cae7675443c72f80f9cfb8f19.png" data-imgid="2589" data-imgurl="/public/uploads/ad/20201015/eacfb43cae7675443c72f80f9cfb8f19.png" data-rolename="萊比錫" data-rolecolor="#FFD700">
-				萊比錫			</div>
-			
-						<div class="img_box" style="background:#FFD700">
-				<img src="/public/uploads/ad/20201015/5e28d73cca349608c65edb4776f09b80.png" data-imgid="2590" data-imgurl="/public/uploads/ad/20201015/5e28d73cca349608c65edb4776f09b80.png" data-rolename="z3" data-rolecolor="#FFD700">
-				z3			</div>
-			
-						<div class="img_box" style="background:#FFD700">
-				<img src="/public/uploads/ad/20201015/4d366a9d32a057c5a208f86277020839.png" data-imgid="2591" data-imgurl="/public/uploads/ad/20201015/4d366a9d32a057c5a208f86277020839.png" data-rolename="沙恩霍斯特" data-rolecolor="#FFD700">
-				沙恩霍斯特			</div>
-			
-						<div class="img_box" style="background:#FFD700">
-				<img src="/public/uploads/ad/20201028/18f34739169c4f00a1410c8e3f411711.png" data-imgid="2593" data-imgurl="/public/uploads/ad/20201028/18f34739169c4f00a1410c8e3f411711.png" data-rolename="胡德" data-rolecolor="#FFD700">
-				胡德			</div>
-			
-						</div>
-		</div>
+              
+<h4>以下为查询选项</h4>
+
+	<div class="picker">
+<select multiple="multiple" class="image-picker" name="keywords[]"  input type="checkbox" >
+<option  data-img-src='img/丽塔莉卡.jpg' value='丽塔莉卡'  >丽塔莉卡.jpg</option>
+<option  data-img-src='img/亚勒里.jpg' value='亚勒里'  >亚勒里.jpg</option>
+<option  data-img-src='img/亚尔特兰.jpg' value='亚尔特兰'  >亚尔特兰.jpg</option>
+<option  data-img-src='img/亚斯摩戴奥.jpg' value='亚斯摩戴奥'  >亚斯摩戴奥.jpg</option>
+<option  data-img-src='img/亚莉艾丝.jpg' value='亚莉艾丝'  >亚莉艾丝.jpg</option>
+<option  data-img-src='img/亚薛斯.jpg' value='亚薛斯'  >亚薛斯.jpg</option>
+<option  data-img-src='img/伊利涅.jpg' value='伊利涅'  >伊利涅.jpg</option>
+<option  data-img-src='img/伊普里特.jpg' value='伊普里特'  >伊普里特.jpg</option>
+<option  data-img-src='img/伟恩海兹.jpg' value='伟恩海兹'  >伟恩海兹.jpg</option>
+<option  data-img-src='img/兰德亚乌尔.jpg' value='兰德亚乌尔'  >兰德亚乌尔.jpg</option>
+<option  data-img-src='img/冬季庆典的肯特斯.jpg' value='冬季庆典的肯特斯'  >冬季庆典的肯特斯.jpg</option>
+<option  data-img-src='img/利皮.jpg' value='利皮'  >利皮.jpg</option>
+<option  data-img-src='img/剧毒的薛欧娜.jpg' value='剧毒的薛欧娜'  >剧毒的薛欧娜.jpg</option>
+<option  data-img-src='img/卡兰.jpg' value='卡兰'  >卡兰.jpg</option>
+<option  data-img-src='img/卡昂.jpg' value='卡昂'  >卡昂.jpg</option>
+<option  data-img-src='img/培斯.jpg' value='培斯'  >培斯.jpg</option>
+<option  data-img-src='img/塞罗.jpg' value='塞罗'  >塞罗.jpg</option>
+<option  data-img-src='img/夏武.jpg' value='夏武'  >夏武.jpg</option>
+<option  data-img-src='img/奥尔拉特巴哈.jpg' value='奥尔拉特巴哈'  >奥尔拉特巴哈.jpg</option>
+<option  data-img-src='img/奥洛洛.jpg' value='奥洛洛'  >奥洛洛.jpg</option>
+<option  data-img-src='img/婚纱琳.jpg' value='婚纱琳'  >婚纱琳.jpg</option>
+<option  data-img-src='img/安泰诺拉.jpg' value='安泰诺拉'  >安泰诺拉.jpg</option>
+<option  data-img-src='img/寒冬的铁板克林.jpg' value='寒冬的铁板克林'  >寒冬的铁板克林.jpg</option>
+<option  data-img-src='img/巴迪斯.jpg' value='巴迪斯'  >巴迪斯.jpg</option>
+<option  data-img-src='img/布隆克斯.jpg' value='布隆克斯'  >布隆克斯.jpg</option>
+<option  data-img-src='img/帕顿.jpg' value='帕顿'  >帕顿.jpg</option>
+<option  data-img-src='img/年虎.jpg' value='年虎'  >年虎.jpg</option>
+<option  data-img-src='img/异世界维托.jpg' value='异世界维托'  >异世界维托.jpg</option>
+<option  data-img-src='img/悠勒菲.jpg' value='悠勒菲'  >悠勒菲.jpg</option>
+<option  data-img-src='img/摩根.jpg' value='摩根'  >摩根.jpg</option>
+<option  data-img-src='img/斯维缇.jpg' value='斯维缇'  >斯维缇.jpg</option>
+<option  data-img-src='img/新琳.jpg' value='新琳'  >新琳.jpg</option>
+<option  data-img-src='img/无名.jpg' value='无名'  >无名.jpg</option>
+<option  data-img-src='img/普洛肯.jpg' value='普洛肯'  >普洛肯.jpg</option>
+<option  data-img-src='img/朱红.jpg' value='朱红'  >朱红.jpg</option>
+<option  data-img-src='img/柏德.jpg' value='柏德'  >柏德.jpg</option>
+<option  data-img-src='img/梵派尔.jpg' value='梵派尔'  >梵派尔.jpg</option>
+<option  data-img-src='img/泰隆.jpg' value='泰隆'  >泰隆.jpg</option>
+<option  data-img-src='img/海勒汀.jpg' value='海勒汀'  >海勒汀.jpg</option>
+<option  data-img-src='img/海潮之音艾琳.jpg' value='海潮之音艾琳'  >海潮之音艾琳.jpg</option>
+<option  data-img-src='img/海蒂.jpg' value='海蒂'  >海蒂.jpg</option>
+<option  data-img-src='img/海蛇女王.jpg' value='海蛇女王'  >海蛇女王.jpg</option>
+<option  data-img-src='img/爱尔琳.jpg' value='爱尔琳'  >爱尔琳.jpg</option>
+<option  data-img-src='img/爱林.jpg' value='爱林'  >爱林.jpg</option>
+<option  data-img-src='img/爱琪斯.jpg' value='爱琪斯'  >爱琪斯.jpg</option>
+<option  data-img-src='img/狄伦.jpg' value='狄伦'  >狄伦.jpg</option>
+<option  data-img-src='img/琪琪乐.jpg' value='琪琪乐'  >琪琪乐.jpg</option>
+<option  data-img-src='img/琳.jpg' value='琳'  >琳.jpg</option>
+<option  data-img-src='img/琳卡.jpg' value='琳卡'  >琳卡.jpg</option>
+<option  data-img-src='img/白发贝勒蒙.jpg' value='白发贝勒蒙'  >白发贝勒蒙.jpg</option>
+<option  data-img-src='img/白灵.jpg' value='白灵'  >白灵.jpg</option>
+<option  data-img-src='img/盧泰斯.jpg' value='盧泰斯'  >盧泰斯.jpg</option>
+<option  data-img-src='img/真安德烈.jpg' value='真安德烈'  >真安德烈.jpg</option>
+<option  data-img-src='img/真艾莉娜.jpg' value='真艾莉娜'  >真艾莉娜.jpg</option>
+<option  data-img-src='img/真雅娜莉丝.jpg' value='真雅娜莉丝'  >真雅娜莉丝.jpg</option>
+<option  data-img-src='img/真龙.jpg' value='真龙'  >真龙.jpg</option>
+<option  data-img-src='img/礼物包鬼英.jpg' value='礼物包鬼英'  >礼物包鬼英.jpg</option>
+<option  data-img-src='img/科普特.jpg' value='科普特'  >科普特.jpg</option>
+<option  data-img-src='img/米纳尔.jpg' value='米纳尔'  >米纳尔.jpg</option>
+<option  data-img-src='img/红灵.jpg' value='红灵'  >红灵.jpg</option>
+<option  data-img-src='img/维托.jpg' value='维托'  >维托.jpg</option>
+<option  data-img-src='img/罗季.jpg' value='罗季'  >罗季.jpg</option>
+<option  data-img-src='img/罗登.jpg' value='罗登'  >罗登.jpg</option>
+<option  data-img-src='img/罗蓝斯.jpg' value='罗蓝斯'  >罗蓝斯.jpg</option>
+<option  data-img-src='img/艾伊达.jpg' value='艾伊达'  >艾伊达.jpg</option>
+<option  data-img-src='img/艾利兹.jpg' value='艾利兹'  >艾利兹.jpg</option>
+<option  data-img-src='img/艾密莉.jpg' value='艾密莉'  >艾密莉.jpg</option>
+<option  data-img-src='img/艾尔.jpg' value='艾尔'  >艾尔.jpg</option>
+<option  data-img-src='img/艾尔怕顿.jpg' value='艾尔怕顿'  >艾尔怕顿.jpg</option>
+<option  data-img-src='img/艾希.jpg' value='艾希'  >艾希.jpg</option>
+<option  data-img-src='img/艾殷.jpg' value='艾殷'  >艾殷.jpg</option>
+<option  data-img-src='img/艾菲.jpg' value='艾菲'  >艾菲.jpg</option>
+<option  data-img-src='img/芮妮.jpg' value='芮妮'  >芮妮.jpg</option>
+<option  data-img-src='img/莱怡芙.jpg' value='莱怡芙'  >莱怡芙.jpg</option>
+<option  data-img-src='img/蒂亚娜.jpg' value='蒂亚娜'  >蒂亚娜.jpg</option>
+<option  data-img-src='img/薛伦.jpg' value='薛伦'  >薛伦.jpg</option>
+<option  data-img-src='img/薛欧娜.jpg' value='薛欧娜'  >薛欧娜.jpg</option>
+<option  data-img-src='img/诺荷拉.jpg' value='诺荷拉'  >诺荷拉.jpg</option>
+<option  data-img-src='img/贞德.jpg' value='贞德'  >贞德.jpg</option>
+<option  data-img-src='img/费梅蒂.jpg' value='费梅蒂'  >费梅蒂.jpg</option>
+<option  data-img-src='img/赛罗坎.jpg' value='赛罗坎'  >赛罗坎.jpg</option>
+<option  data-img-src='img/里希特.jpg' value='里希特'  >里希特.jpg</option>
+<option  data-img-src='img/阿利亚.jpg' value='阿利亚'  >阿利亚.jpg</option>
+<option  data-img-src='img/阿尔法.jpg' value='阿尔法'  >阿尔法.jpg</option>
+<option  data-img-src='img/陈巴哈马翁.jpg' value='陈巴哈马翁'  >陈巴哈马翁.jpg</option>
+<option  data-img-src='img/雪乐秋.jpg' value='雪乐秋'  >雪乐秋.jpg</option>
+<option  data-img-src='img/雪瑞尼亚.jpg' value='雪瑞尼亚'  >雪瑞尼亚.jpg</option>
+<option  data-img-src='img/雷伊亚尔.jpg' value='雷伊亚尔'  >雷伊亚尔.jpg</option>
+<option  data-img-src='img/露梅娜.jpg' value='露梅娜'  >露梅娜.jpg</option>
+<option  data-img-src='img/青龙.jpg' value='青龙'  >青龙.jpg</option>
+<option  data-img-src='img/韩.jpg' value='韩'  >韩.jpg</option>
+<option  data-img-src='img/马莉娜顿.jpg' value='马莉娜顿'  >马莉娜顿.jpg</option>
+<option  data-img-src='img/鲁德拉.jpg' value='鲁德拉'  >鲁德拉.jpg</option>
+<option  data-img-src='img/麦罗.jpg' value='麦罗'  >麦罗.jpg</option>
+<option  data-img-src='img/黑卡蒂.jpg' value='黑卡蒂'  >黑卡蒂.jpg</option>
+
+
+</select>
 	</div>
 
-	<div style="height:20px; background:#333; width:100%;margin-bottom:10px"></div>
-	<!-- id  和 data-imgid 很重要 -->
-	<hr>
+
 
 	
+</div>
+     <button type="submit" class="btn btn-success btn-default btn-lg btn-block">查询</button>
+     <a class="btn btn-default btn-lg btn-block" href="dxccx.php" role="button">返回</a>      
+       
 
-	
-	
-	<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
-	<script src="/public/bootstrap/js/jquery.min.js"></script>
-	<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
-	<script src="/public/bootstrap/js/bootstrap.min.js"></script>
+        </form>
 
-<script>
-<!-- 绑定图片事件 -->
-$("#default_img img").click(function(){
-	<!-- 获取图片的编号 -->
-	var img_id = $(this).data('imgid');
-	var img_url = $(this).data('imgurl');
-	var rolename = $(this).data('rolename');
-	var rolecolor = $(this).data('rolecolor');
-	if(rolecolor == ""){
-		rolecolor = "#97e0ff";
-	}
-	<!-- 隐藏已选中的图片 -->
-	<!-- $(this).hide(); -->
-	
-	<!-- 将选择的图片放入下列 -->
-	var selected_content = '<div class="img_box" data-imgid="'+img_id+'" onclick="unselected(this)" style="background:'+rolecolor+'"><img src="'+img_url+'"> <input type="hidden" id="'+img_id+'" name="ids[]" value="'+img_id+'">'+rolename+'</div>'
-	$("#selected_img").append(selected_content);
+<!--必要文件-->  
+<link rel="stylesheet" type="text/css" href="css/image-picker.css">
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<!--瀑布流布局插件-->
+<script src="js/jquery.masonry.min.js" type="text/javascript"></script>
+<!--图片选择器插件-->
+<script src="js/image-picker.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+	$("select.image-picker").imagepicker({
+		hide_select:false
+	});
+
+	$("select.image-picker.show-labels").imagepicker({
+		hide_select:false,
+		show_label:true
+	});
+
+	$("select.image-picker.limit_callback").imagepicker({
+		limit_reached:function(){
+			alert('We are full!')
+		},hide_select:false
+	});
+
+	//瀑布流布局
+	var container = $("select.image-picker.masonry").next("ul.thumbnails");
+
+	container.imagesLoaded(function(){
+		container.masonry({
+			itemSelector:"li"
+		});
+	});
+
 });
-<!-- 取消图片 -->
-function unselected(obj){
-	var img_id = $(obj).data('imgid');
-	<!-- 循环已选择的图片,将其取消 -->
-	$.each($('#selected_img .img_box'),function(k,v){
-		var _thisid = $(v).data('imgid');
-		if(img_id == _thisid){
-			// alert(_thisid);
-			$(v).remove();
-			$("#"+_thisid).remove();
-		}
-	});
-	<!-- 显示上列图片 -->
-	$("#img_id_"+img_id).show();
-}
+</script>
 
-$(function(){
-	$("#delbox").click(function(){
-		document.getElementById('selected_img').innerHTML = " ";
-		document.getElementById("myform").reset();
-	});
-})
-
-</script>	
-<script async src="https://drv.tw/inc/wd.js"></script></body>
+</body>
 </html>
+
+ ﻿    </tbody>
+      </table> 
+
+
+           
+			
+			
