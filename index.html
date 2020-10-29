@@ -144,62 +144,9 @@ $(document).ready(function(){
 </body>
 </html>
 
- 
-<script type="text/javascript">
-function onSearch(obj){//js函式開始
-setTimeout(function(){//因為是即時查詢，需要用setTimeout進行延遲，讓值寫入到input內，再讀取
-var storeId = document.getElementById('store');//獲取table的id標識
-var rowsLength = storeId.rows.length;//表格總共有多少行
-var key = obj.value;//獲取輸入框的值
-var searchCol = 0;//要搜尋的哪一列，這裡是第一列，從0開始數起
-for(var i=1;i<rowsLength;i  ){//按表的行數進行迴圈，本例第一行是標題，所以i=1，從第二行開始篩選（從0數起）
-var searchText = storeId.rows[i].cells[searchCol].innerHTML;//取得table行，列的值
-if(searchText.match(key)){//用match函式進行篩選，如果input的值，即變數 key的值為空，返回的是ture，
-storeId.rows[i].style.display='';//顯示行操作，
-}else{
-storeId.rows[i].style.display='none';//隱藏行操作
-}
-}
-},200);//200為延時時間
-}
-</script>
-<body>
-<div > <input name="key" type="text" id="key" onkeydown="onSearch(this)" value="" /></div>
-<table width="200" border="1" id="store"><!-- id與函式的getId一致 -->
-<tr bgcolor="#CCCCCC">
-<td>name</td>
-<td> </td>
-<td> </td>
-</tr>
-<td>good</td>
-<td> </td>
-<td> </td>
-</tr>
-<tr>
-<td>better</td>
-<td> </td>
-<td> </td>
-</tr>
-<tr>
-<td>best</td>
-<td> </td>
-<td> </td>
-</tr>
-<tr>
-<td>bad</td>
-<td> </td>
-<td> </td>
-</tr>
-<tr>
-<td>worse</td>
-<td> </td>
-<td> </td>
-</tr>
-<tr>
-<td>worst</td>
-<td> </td>
-<td> </td>
-</tr>
-</table>
+ ﻿<table class='table table-striped'><tbody id="abc">
+            <tr class="sr-only"><thead><tr><th>编号</th><th>数据</th></tr></thead><tbody><tr><td>S10--JUDLi7</td><td><img src='./img/爱德华.jpg'/><img src='./img/不溯.jpg'/><img src='./img/御神夢.jpg'/><img src='./img/東文宇.jpg'/><img src='./img/艾絲維亞.jpg'/><img src='./img/神澄.jpg'/><img src='./img/蘇我美雪.jpg'/><img src='./img/蘇我美雪.jpg'/><img src='./img/石琥.jpg'/><img src='./img/潘.jpg'/><img src='./img/碧翠丝.jpg'/><img src='./img/SR安.jpg'/><img src='./img/SR安.jpg'/><img src='./img/SR安.jpg'/></td></tr>    </tbody>
+      </table>  
+
 
 
