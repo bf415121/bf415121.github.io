@@ -146,38 +146,24 @@ $(document).ready(function(){
 
  ﻿<table class='table table-striped'><thead><tr><th>编号</th><th>数据</th></tr></thead><tbody></tr>    </tbody>
       </table>
-<html>
+<script language="JavaScript">
 
-<head>
-
-<meta charset="UTF-8">
-
-<title>css隐藏table</title>
-
+function show(){
+    document.getElementById("table").style.display='block';
+}
+function hide(){
+    document.getElementById("table").style.display='none';
+}
+</script>
 <style>
-
-.hide{display:none}
-
+td{border:1px solid #369}
 </style>
 
-</head>
-
-<body>
-
-<table class="hide">
-
-<tr>
-
-<td>
-
-这是要隐藏的table信息
-
-</td>
-
-</tr>
-
+<table id="table" cellspacing="0" cellpadding="5" style="">
+    <tr><td>1</td><td>2</td><td>3</td></tr>
+    <tr><td>1</td><td>2</td><td>3</td></tr>
+    <tr><td>1</td><td>2</td><td>3</td></tr>
 </table>
-
-</body>
-
-</html>
+<br>
+<input type="button" value="关闭table" onclick="hide()">
+<input type="button" value="显示table" onclick="show()">
