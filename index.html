@@ -146,24 +146,47 @@ $(document).ready(function(){
 
  ﻿<table class='table table-striped'><thead><tr><th>编号</th><th>数据</th></tr></thead><tbody></tr>    </tbody>
       </table>
-<script language="JavaScript">
+<?php
+  include_once('connection.php');
 
-function show(){
-    document.getElementById("table").style.display='block';
-}
-function hide(){
-    document.getElementById("table").style.display='none';
-}
-</script>
-<style>
-td{border:1px solid #369}
-</style>
+  $SQL = "SELECT * FROM `players`";
 
-<table id="table" cellspacing="0" cellpadding="5" style="">
-    <tr><td>1</td><td>2</td><td>3</td></tr>
-    <tr><td>1</td><td>2</td><td>3</td></tr>
-    <tr><td>1</td><td>2</td><td>3</td></tr>
+  if (isset($_POST['search'])) {
+    $search_word = mysql_real_escape_string($_POST['search_bar']);
+    $SQL .= " WHERE player_id LIKE '%{$search_word}%'";
+    $SQL .= " or player_name LIKE '%{$search_word}%'";
+  }
+
+  $SQL .= 'group by player_id, player_name order by player_id ASC';
+
+  if( !( $SQLRes = mysql_query( $SQL ) ) ){
+    echo 'Retrieval of data from Database Failed - #'.mysql_errno().': '.mysql_error();
+  }else{
+    if( mysql_num_rows( $SQLRes )==0 ){
+      echo '<tr><td colspan="1">No results </td></tr>';
+    }else{
+      $current_player_id = false;
+      while( $row = mysql_fetch_assoc( $SQLRes ) ){
+        if ($row['player_id'] !=$current_player_id) {
+          if ($current_player_id !== false)
+             echo '</table>';
+          echo '
+                <h4>'.$row['player_id'].'</h4>
+
+                <table style = "width: 100%" class="listing" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <th style="width: 50%">Player Name</th>
+                  </tr>';
+
+          $current_player_id = $row['player_id'];
+        }
+        echo '<tr>
+                <td>'.$row['player_name'].'</td>
+                <td><a href =delete.php?del='.$row['player_id'].'><strong>DELETE<strong/></a></td>
+             </tr> ';
+      }
+    }
+    echo '</table>';
+
+?>
 </table>
-<br>
-<input type="button" value="关闭table" onclick="hide()">
-<input type="button" value="显示table" onclick="show()">
